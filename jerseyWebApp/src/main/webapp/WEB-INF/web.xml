@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container,
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.lti.jerseyWebApp</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <url-pattern>/webapi/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DatabaseConnector</display-name>
+    <servlet-name>DatabaseConnector</servlet-name>
+    <servlet-class>com.lti.jerseyWebApp.DatabaseConnector</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseConnector</servlet-name>
+    <url-pattern>/DatabaseConnector</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>User</display-name>
+    <servlet-name>User</servlet-name>
+    <servlet-class>com.lti.jerseyWebApp.User</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>User</servlet-name>
+    <url-pattern>/User</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Results</display-name>
+    <servlet-name>Results</servlet-name>
+    <servlet-class>com.lti.jerseyWebApp.Results</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Results</servlet-name>
+    <url-pattern>/Results</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserDAO</display-name>
+    <servlet-name>UserDAO</servlet-name>
+    <servlet-class>com.lti.jerseyWebApp.UserDAO</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDAO</servlet-name>
+    <url-pattern>/UserDAO</url-pattern>
+  </servlet-mapping>
+</web-app>
